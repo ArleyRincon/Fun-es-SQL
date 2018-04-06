@@ -1,0 +1,21 @@
+/* CRIA NOVA TABELA DE ORIGEM EXISTENTE */
+-----------------------------------------------
+SELECT TOP 100
+    COL1,
+    COL2,
+    COL3,
+    COL4,
+    COL5
+INTO TABELA_A
+FROM TABELA_B
+-----------------------------------------------
+SELECT COUNT(*) FROM TABELA_A
+SELECT COUNT(*) FROM TABELA_B
+-----------------------------------------------
+DROP TABLE TABELA_A
+DROP TABLE TABELA_B
+-----------------------------------------------
+/*         CRIA INDICE NA TABELA       */
+-----------------------------------------------
+CREATE INDEX ITABELA_A ON BASE..TABELA_A(COL1)
+-----------------------------------------------
