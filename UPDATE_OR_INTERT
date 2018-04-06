@@ -1,0 +1,29 @@
+/*          IMPORTAÇÃO DE DADOS          */
+--------------------------------------------
+UPDATE TABELA_A AS A
+    SET 
+        A.COL1 = B.COL1
+        A.COL2 = B.COL2
+        A.COL3 = B.COL3
+    FROM
+        TABELA_B AS B
+WHERE A.COL  = 1
+AND   A.COL2 = B.COL2
+--------------------------------------------
+INSERT INTO 
+    TABELA_A AS A (
+    A.COL1, 
+    A.COL2
+    )  
+  SELECT 
+    B.COL1, 
+    B.COL2   
+  FROM TABELA_B   
+  WHERE 
+    NOT EXISTS (
+        SELECT 
+          A2.COL 
+        FROM TABELA_A AS A2 
+        WHERE A2.COL1 = B.COL1) 
+--------------------------------------------
+GO
