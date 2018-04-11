@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Pedro",
+    "species" : "Italiano",
+    "foods": {
+      "likes": ["massa", "carne"],
+      "dislikes": ["fruta", "verdura"]
+    }
+  },
+  {
+    "name": "Carlos",
+    "species" : "Grego",
+    "foods": {
+      "likes": ["salada", "batatas"],
+      "dislikes": ["carne"]
+    }
+  },
+  {
+    "name": "Marcela",
+    "species" : "brasileira",
+    "foods": {
+      "likes": ["feijoada"],
+      "dislikes": ["macarrao"]
+    }
+  }
+]
