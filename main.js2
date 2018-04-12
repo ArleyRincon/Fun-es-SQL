@@ -1,0 +1,49 @@
+const regData = [
+	{
+		nome: "Alex",
+		sexo: "Masculino",
+		bens: ["carro","casa","<strong>apartamento</strong"],
+		idade: 20,
+		celular: "(41)99999-8888"	
+	},
+	{
+		nome: "Julia",
+		sexo: "Feminino",
+		bens: ["moto","apartamento","<strong>loja</strong"],
+		idade: 30,
+		celular: "(41)99999-8888"	
+	},
+	{
+		nome: "Nicole",
+		sexo: "Feminino",
+		bens: ["Bicicleta","predio","<strong>estacionamento</strong"],
+		idade: 20,
+		celular: "(41)99999-8888"	
+	}
+];
+
+
+function bens(bens){
+	return `
+	<h4> Bens</h4>
+		<ul class="bens-list">
+			${bens.map((bem)=>`<li>${bem}</li>`).join('')}
+		</ul>
+	`
+}
+
+function regTemplate(reg) {
+	return `
+	<div class="pessoa">
+		<h2 class="reg-nome">${reg.nome}<span class="sexo">(${reg.sexo})</span></h2>
+		<h3 class="reg-idade">Idade: ${reg.idade}</h3>
+		${reg.bens ? bens(reg.bens): ''}
+	</div>
+	`	
+}
+
+document.getElementById("app").innerHTML = `
+<h1 class="app-title"> Registros (${regData.length} Pessoas)</h1>
+	${regData.map(regTemplate).join('')}
+	<p class="footer">Este ${regData.length} pessoas</p>
+`
