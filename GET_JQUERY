@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="login()">1. Login</button>
+    <button onclick="obterConsumo()">2. ObterConsumo</button>
+
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+
+        // Configura o jQuery para mandar os cookies mesmo que o domínio seja
+        // diferente (ex: blabla.com.br acessando url)
+        $.ajaxSetup({
+            xhrFields: {
+                withCredentials: true
+            }
+        });
+
+        function login() {
+            $.post('https://url/api/token', { Login: '', Senha: '' })
+                .done(function () { alert('OK'); })
+                .fail(function () { alert('erro'); });
+        }
+
+        function obterConsumo() {
+            $.get('https://url/api/Processo/ObterConsumo')
+                .done(function (data) { alert('OK: ' + data.emUso + '/' + data.contratado); })
+                .fail(function () { alert('erro'); });
+        }
+
+    </script>
+</body>
+</html>
