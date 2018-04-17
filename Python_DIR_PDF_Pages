@@ -1,0 +1,12 @@
+import PyPDF2
+from PyPDF2 import PdfFileReader
+
+manipulador = open('D:\lista.txt', 'r')
+
+for x in range(0, manipulador.fileno()):
+    arq = manipulador.readline()
+    local = arq.replace("\\", "/", 10)
+    local = local.replace("\n","",1)
+    arquivo = PyPDF2.PdfFileReader(open(str(local), "rb"))
+    print(local)
+    print(str(arquivo.getNumPages()))
