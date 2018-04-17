@@ -1,0 +1,16 @@
+import PyPDF2
+from PyPDF2 import PdfFileReader
+
+# somente linha de arquivos contendo .PDF 
+
+pdfs = open('D:\lista.txt', 'r')
+cont = 0
+for linha in pdfs:
+    linha = linha.rstrip()
+    if '.pdf' in linha:
+        cont = cont + 1
+        arq = linha
+        local = arq.replace("\\", "/", 10)
+        local = local.replace("\n","",1)
+        arquivo = PyPDF2.PdfFileReader(open(str(local), "rb"))
+        print(local+' - Pág: '+str(arquivo.getNumPages()))
