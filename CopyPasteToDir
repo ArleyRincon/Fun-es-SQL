@@ -1,0 +1,23 @@
+import os.path
+import shutil
+
+arq = open('C:/diretorio/lista.txt', 'r')
+cont = 0
+for linha in arq:
+    linha = linha.rstrip()
+    num = int(linha.find('*'))
+    ext = int(linha.find('.'))
+    linha_1 = linha[0:num]  # dir_pan
+
+    dir = linha[0:num]
+    extensao = linha_1[ext + 1:]
+    contrato = linha[num + 1:]
+    if os.path.exists('C:/diretorio/'+contrato):
+        shutil.copy(dir, ("C:/diretorio/{0}/{1}_{2}.{3}".format(contrato, contrato, cont, extensao)))
+    else:
+        os.makedirs('C:/diretorio/'+contrato)
+        shutil.copy(dir, ("C:/diretorio/{0}/{1}_{2}.{3}".format(contrato, contrato, cont, extensao)))
+
+    cont = cont + 1
+
+print(cont)
