@@ -5,7 +5,9 @@ DECLARE @IronMan INT
 BEGIN TRAN AddIronMan3
 
 	INSERT INTO tblFilms (FilmName,FilmReleaseDate)
-	VALUES ('Iron Man 3', '2018-04-29')	WHERE FilmName = 'Iron Man 3'
+	VALUES ('Iron Man 3', '2018-04-29')
+	
+SELECT @IronMan = COUNT(*) FROM tblFilms WHERE FilmName = 'Iron Man 3'
 
 IF @IronMan > 1
 	BEGIN
