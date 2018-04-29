@@ -1,0 +1,19 @@
+/*  Conditionally committing or rolling back  */
+
+DECLARE @IronMan INT
+
+BEGIN TRAN AddIronMan3
+
+	INSERT INTO tblFilms (FilmName,FilmReleaseDate)
+	VALUES ('Iron Man 3', '2018-04-29')	WHERE FilmName = 'Iron Man 3'
+
+IF @IronMan > 1
+	BEGIN
+		ROLLBACK TRAN AddIronMan3
+		PRINT 'Iron Man 3 não esta cadastrado'
+	END
+ELSE
+	BEGIN
+		COMMIT TRAN AddIronMan3
+		PRINT 'Iron Man 3 cadastrado'
+	END
