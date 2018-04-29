@@ -1,0 +1,21 @@
+/*  Using Error Handling  */
+
+BEGIN TRY
+	BEGIN TRAN AddTM
+
+	INSERT INTO tblFilms (FilmName,FilmReleaseDate)
+	VALUES ('Iron Man 3', '2018-04-29')
+	
+	UPDATE tblFilms
+	SET FulmDirectorID = 'Shane Black'
+	WHERE FilmName = 'Iron Man 3'
+	
+	COMMIT TRAN AddTM
+END TRY
+BEGIN CATCH
+	ROLLBACK TRAN AddTM
+	PRINT 'Falhou Update do Iron Man 3'
+END CATCH
+		
+		
+SELECT @IronMan = COUNT(*) FROM tblFilms WHERE FilmName = 'Iron Man 3'
