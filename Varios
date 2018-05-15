@@ -1,0 +1,14 @@
+Vários CODE:
+
+Contagem de arquivos num diretorio
+
+(Get-ChildItem C:\Temp\ -filter "*.hdr" -recurse).Count
+
+
+------------------------
+MATAR DELPHI!
+
+@echo off
+taskkill /f -FI "IMAGENAME eq bds.exe" -FI "USERNAME eq arley"
+logoff
+exit
