@@ -1,0 +1,26 @@
+import pymd5
+import os.path
+import shutil
+
+arq = open('C:/_Hash.txt', 'r')
+log = open('C:/listaHASH.txt', 'w')
+
+
+for linha in arq:
+    linha = linha.rstrip()
+    num = int(linha.find('*'))
+    nome = int(linha.find('?'))
+
+    dir = linha[0:num]
+    arquivo = linha[nome + 1:]
+    contrato = linha[num + 1:]
+    contrato = contrato.replace('?' + arquivo, '')
+
+    print(dir)
+    #print(arquivo)
+    #print(contrato)
+    hash = str(pymd5._hash_file(dir))
+    print(pymd5._hash_file(dir))
+    print(hash)
+    # log.write('{0} - {1}'.format((pymd5._hash_file(dir)),dir))
+    log.write(hash+' - '+dir+'\n')
