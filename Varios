@@ -18,3 +18,7 @@ exit
 
 powershell -Command "GET-FILEHASH C:\arquivo.pdf -ALGORITHM MD5 | FORMAT-LIST >" C:\arquivoA.txt
 powershell -Command "GET-FILEHASH C:\arquivo.pdf -ALGORITHM MD5 | FORMAT-LIST >" C:\arquivoB.txt
+
+
+
+https://app.pluralsight.com/id?
