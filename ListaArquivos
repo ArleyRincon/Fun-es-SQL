@@ -1,0 +1,3 @@
+import glob
+for x in glob.glob("C:\imagens\*.jpg"):
+    print(x)
