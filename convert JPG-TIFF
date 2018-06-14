@@ -1,0 +1,5 @@
+from PIL import Image
+
+im = Image.open('C:/imagens/imagem1.jpg')
+im2 = im.convert(0)
+im2.save('C:/imagens/imagem1.tif', 'TIFF')
