@@ -1,0 +1,12 @@
+import shutil
+import glob
+import os
+os.chdir('C:\imagens')
+des = 'C:\imagens\conv'
+ori = 'C:\imagens'
+for file in glob.glob("*.txt"):
+    file = file.rstrip()
+    print(file)
+    print(ori + '\\' + file)
+    print(des + '\\' + file)
+    shutil.copy(ori + '\\' + file, des + '\\' + file)
