@@ -1,20 +1,10 @@
 from PIL import Image
 
-im = Image.open('C:/imagens/imagem1.jpg')
-im2 = im.convert(0)
-im2.save('C:/imagens/imagem1.tif', 'TIFF')
-
-
-
-
-from PIL import Image
-
 def reversed_string(a_string):
     return a_string[::-1]
 
 
 arq = open('C:\imagens\lista.txt','r')
-adrea = 'C:\imagens\conv'
 
 for linha in arq:
     linha = linha.rstrip()
@@ -22,9 +12,10 @@ for linha in arq:
     num = int(linha1.find('/'))
     linha1 = linha1[0:num]
     linha1 = reversed_string(linha1)
+    cam = linha.replace(linha1, ' ')
     linha1 = linha1[:-4]
+    print(cam)
     print(linha)
-    print(linha1)
     im = Image.open(linha)
     im2 = im.convert(0)
-    im2.save(adrea + '\\' + linha1 + '.tif', 'TIFF')
+    im2.save(cam + linha1 + '.tif', 'TIFF')
