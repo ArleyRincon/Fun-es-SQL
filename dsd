@@ -45,3 +45,19 @@
 301864686
 301874804
 301879600
+
+
+NroContrato;CPF/CNPJ;TipoDocumento;Documento;NomeDocumentoExtensao
+00000022392878;27264211304;1;1;ArquivoTesteUploadLote01.pdf
+00000022392878;27264211304;1;2;ArquivoTesteUploadLote02.pdf
+00000022392878;27264211304;1;3;ArquivoTesteUploadLote03.pdf
+00000022392878;27264211304;1;4;ArquivoTesteUploadLote04.pdf
+
+
+
+1	2	3	4	5	6
+DATA	OUTORGADO	PODERES	VENCIMENTO	TIPO	NUMERO DE PASTA
+20/06/2018	Arley - Softpartech	Administrar Curso	22/06/2018	Particular	20
+
+
+
