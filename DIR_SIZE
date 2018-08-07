@@ -1,0 +1,3 @@
+DIR AND SIZE
+
+@echo off & @For /F "Delims=" %A in ('dir C:\ /s /b') Do @Echo %~fA %~zA >> C:\Listas\gar.txt
